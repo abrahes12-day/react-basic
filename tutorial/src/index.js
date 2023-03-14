@@ -1,8 +1,46 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-function Greeting() {
-  return <h1> My First Component </h1>;
+//CSS
+import "./index.css";
+
+function Booklist() {
+  return (
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  );
 }
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+const Book = () => {
+  return (
+    <article className="book">
+      <Image></Image>
+      <Title />
+      <Author />
+    </article>
+  );
+};
+
+const Image = () => {
+  return (
+    <article>
+      <img src="https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg" />
+    </article>
+  );
+};
+
+const Title = () => <h1>I Love You To The Moon and Back</h1>;
+
+const Author = () => <h4>Amelia Hepworth</h4>;
+
+ReactDom.render(<Booklist />, document.getElementById("root"));
